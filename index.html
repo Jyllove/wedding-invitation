@@ -3,43 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到姜先生与王小姐的婚礼</title>
+    <title>婚礼邀请</title>
     <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
         .invitation-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 80%;
-            margin: 0 auto;
+            width: 100%; /* 改为100%宽度以适应手机屏幕 */
+            padding: 20px; /* 添加内边距以避免内容紧贴边缘 */
+            box-sizing: border-box; /* 确保内边距不会增加容器宽度 */
         }
 
         .invitation-text {
             text-align: center;
             margin-bottom: 20px;
+            width: 100%; /* 确保文本块宽度与容器相同 */
         }
 
         .photo-gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* 浏览器支持的情况下，用于设置图片之间的间距 */
+            margin-top: -10px; /* 可选：如果图片间距过大，可以微调 */
         }
 
         .photo-gallery img {
-            width: calc(33.333% - 10px); /* 根据需要调整，以确保三列布局 */
+            width: calc(33.333% - 10px); /* 三列布局 */
             height: auto;
-            display: block; /* 去除图片下方的默认间距 */
+            display: block;
+            margin-bottom: 10px; /* 在图片下方添加间距 */
         }
 
+        /* 媒体查询以适应不同屏幕尺寸 */
         @media (max-width: 768px) {
             .photo-gallery img {
-                width: calc(50% - 10px); /* 在小屏幕上调整为两列布局 */
+                width: calc(50% - 10px); /* 两列布局 */
             }
         }
 
         @media (max-width: 480px) {
             .photo-gallery img {
-                width: 100%; /* 在更小的屏幕上，图片占满整行 */
+                width: 100%; /* 单列布局 */
             }
         }
     </style>
@@ -50,9 +60,7 @@
             <h1>我们诚挚地邀请您</h1>
             <p>在这个特别的时刻，我们衷心希望您能与我们一同分享喜悦。</p>
             <p>婚礼日期：2024年10月1日</p>
-            <p>婚礼地点：囍荟百家湖店·南京市江宁区双龙大道1519号
-                <a href="https://surl.amap.com/9SoleqZfJb" target="_blank" rel="noopener noreferrer">点击这里查看地图</a>
-            </p>
+            <p>婚礼地点：<a href="https://surl.amap.com/9SoleqZfJb" target="_blank" rel="noopener noreferrer">囍荟百家湖店·南京市江宁区双龙大道1519号</a></p>
         </div>
         <div class="photo-gallery">
             <img src="img/1.JPG" alt="婚礼照片1">
@@ -64,7 +72,6 @@
             <img src="img/7.JPG" alt="婚礼照片7">
             <img src="img/8.JPG" alt="婚礼照片8">
             <img src="img/9.JPG" alt="婚礼照片9">
-            <img src="img/10.JPG" alt="婚礼照片10">
         </div>
     </div>
 </body>
