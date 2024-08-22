@@ -3,44 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>婚礼请柬</title>
+    <title>电子请柬</title>
     <style>
+        /* 通用样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #f4f4f4;
         }
-        .invitation {
+
+        .invitation-container {
             text-align: center;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             width: 80%;
             max-width: 600px;
+            margin: auto;
         }
-        h1 {
-            color: #3498db;
+
+        /* 动画关键帧 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 图片样式 */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .photo-gallery img {
+            width: calc(33.333% - 16px);
+            margin: 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .photo-gallery img {
+                width: calc(50% - 16px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-gallery img {
+                width: calc(100% - 16px);
+            }
+        }
+
+        /* 文字样式 */
+        .invitation-text {
+            margin-bottom: 20px;
+        }
+
+        .invitation-text h1 {
+            color: #333;
+        }
+
+        .invitation-text p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="invitation">
-        <h1>婚礼请柬</h1>
-        <p>亲爱的[受邀人姓名],</p>
-        <p>我们诚挚地邀请您参加我们的婚礼庆典，与我们共同见证这一幸福时刻。</p>
-        <p>婚礼详情：</p>
-        <ul>
-            <li>日期：2023年10月1日</li>
-            <li>时间：下午5点</li>
-            <li>地点：梦幻花园大酒店</li>
-        </ul>
-        <p>期待您的光临！</p>
+    <div class="invitation-container">
+        <div class="invitation-text">
+            <h1>我们诚挚地邀请您</h1>
+            <p>在这个特别的时刻，我们衷心希望您能与我们一同分享喜悦。</p>
+            <p>婚礼日期：2024年10月1日</p>
+            <p>婚礼地点：囍荟百家湖店·南京市江宁区双龙大道1519号
+                <a href="https://surl.amap.com/9SoleqZfJb"
+                   target="_blank">点击这里查看地图</a>
+            </p>
+        </div>
+        <div class="photo-gallery">
+            <img src="/src/1.JPG" alt="婚礼照片1">
+            <img src="/src/2.JPG" alt="婚礼照片2">
+            <img src="/src/3.JPG" alt="婚礼照片3">
+            <img src="/src/4.JPG" alt="婚礼照片4">
+            <img src="/src/5.JPG" alt="婚礼照片5">
+            <img src="/src/6.JPG" alt="婚礼照片6">
+            <img src="/src/7.JPG" alt="婚礼照片7">
+            <img src="/src/8.JPG" alt="婚礼照片8">
+            <img src="/src/9.JPG" alt="婚礼照片9">
+            <img src="/src/10.JPG" alt="婚礼照片10">
+        </div>
     </div>
 </body>
 </html>
