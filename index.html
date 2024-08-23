@@ -79,7 +79,7 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio autoplay loop id="myAudio">
         <source src="audio/bg.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -121,7 +121,6 @@
                 document.querySelector('.music-button').textContent = '🔊';
             }
         }
-
         // 注意：这里自动播放是带muted属性的，因此不违反浏览器的自动播放策略
         // 如果用户与页面有交互（如点击），则可以取消静音播放
     </script>
