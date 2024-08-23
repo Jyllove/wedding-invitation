@@ -52,13 +52,39 @@
                 width: 100%; /* 单列布局 */
             }
         }
-
         audio {
             display: none;
+        }
+
+         /* 悬浮按钮样式 */
+        .music-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .music-button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="audio/bg.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- 悬浮按钮 -->
+    <div class="music-button" onclick="toggleMute()">🔇</div>
     <div class="invitation-container">
         <div class="invitation-text">
             <h1>我们诚挚地邀请您</h1>
@@ -80,10 +106,24 @@
             <img src="img/8.JPG" alt="婚礼照片8">
             <img src="img/9.JPG" alt="婚礼照片9">
         </div>
-        <audio autoplay loop>
-            <source src="audio/bg.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
     </div>
+    <script>
+        // 切换静音状态的函数
+        function toggleMute() {
+            var audio = document.getElementById('myAudio');
+            if (audio.muted) {
+                audio.muted = false;
+                // 可选：更改按钮图标或文本
+                document.querySelector('.music-button').textContent = '🔇';
+            } else {
+                audio.muted = true;
+                // 可选：更改按钮图标或文本
+                document.querySelector('.music-button').textContent = '🔊';
+            }
+        }
+
+        // 注意：这里自动播放是带muted属性的，因此不违反浏览器的自动播放策略
+        // 如果用户与页面有交互（如点击），则可以取消静音播放
+    </script>
 </body>
 </html>
